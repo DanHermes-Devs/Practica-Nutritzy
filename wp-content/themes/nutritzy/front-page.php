@@ -7,7 +7,7 @@
                 <div class="text-white">
                     <?php the_content(); ?>
                 </div>
-                <a href="#" class="btn py-2 px-4">Leer mas</a>
+                <a href="#" class="btn py-2 px-4">Leer más</a>
             </div>
         </div>
         <div class="col-lg-6 col-xl-6 d-none d-sm-none d-md-none d-lg-block p-0 m-0 image-font2"></div>

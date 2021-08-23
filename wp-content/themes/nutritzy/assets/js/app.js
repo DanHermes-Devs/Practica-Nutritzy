@@ -4,21 +4,21 @@ jQuery(document).ready( $ => {
     let lat = $("#lat").val();
     let lng = $("#lng").val();
     let direccion = $("#direccion").val();
+    let ubicacion = $("#ubi").val();
 
-    var map = L.map('mapa').setView([lat, lng], 13);
+    var map = L.map('mapa').setView([lat, lng], 17);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     L.marker([lat, lng]).addTo(map)
-        .bindPopup(direccion)
+        .bindPopup(`La direccion es: ${direccion} y la ubicacion es: ${ubicacion}`)
         .openPopup();
-
 });
 
 
-// Fijar barra de navegacion al hacer scroll
+// Fijar barra de navegacion al hacer scroll - Arrow Function
 window.onscroll = () => {
     const scroll = window.scrollY;
 

@@ -10,7 +10,7 @@
     <title>Nutritzy</title>
 
 </head>
-<body>
+<body id="top">
 
 <!-- Incio de navegacion -->
 <div class="container-fluid bg-white z-index-10" id="menu-principal">

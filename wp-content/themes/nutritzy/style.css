@@ -182,3 +182,12 @@ html{
 #wpcf7-f32-o1 p label{
   width: 100%;
 }
+
+
+.list-style-none {
+  list-style: none!important;
+}
+
+.list-style-none a {
+  color: #000!important;
+}

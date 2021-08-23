@@ -2,16 +2,19 @@
 <footer class="pt-6">
     <div class="container-fluid text-center">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-11  bf p-3 p">
-                <a class=" text-dark mr-4" href="inicio">Inicio</a>
-                <a class=" text-dark mr-4 t" href="galeria">Galeria</a>
-                <a class=" text-dark mr-4 t" href="servicios">Servicios</a>
-                <a class=" text-dark mr-4 t" href="ubicacion">Ubicacion</a>
-                <a class=" text-dark mr-4 t" href="contacto">Contactos</a>
-            </div>
+            <?php
+                $args = array(
+                        'menu_class' => 'd-flex list-style-none mb-0 text-dark justify-content-center',
+                        'container_id' => 'menu_footer',
+                        'container_class' => 'col-12 col-sm-12 col-md-12 col-lg-11 bf p-3 text-dark',
+                        'theme_location' => 'menu_footer',
+                );
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-1  bf1 p-3 text-center">
-                <a href="#inicio"><img class="" src="<?php echo get_template_directory_uri() ?>/assets/img/footer/flecha-arriba-footer.svg" alt=""></a>
+                wp_nav_menu( $args );
+            ?>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-1 d-flex flex-column align-items-center justify-content-center bf1 p-3 text-center">
+                <a href="#top"><img class="" src="<?php echo get_template_directory_uri() ?>/assets/img/footer/flecha-arriba-footer.svg" alt=""></a>
             </div>
         </div>
     </div>

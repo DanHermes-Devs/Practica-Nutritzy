@@ -3,12 +3,13 @@
 function nutritzy_setup(){
     // Registro de menu
     register_nav_menus( array(
-        'menu_principal' => esc_html('Menú Principal', 'nutritzy'),
-        'menu_footer' => esc_html('Menú Footer', 'nutritzy'),
+        'menu_principal'      => esc_html('Menú Principal', 'nutritzy'),
+        'menu_footer'         => esc_html('Menú Footer', 'nutritzy'),
+		'menu_redes_sociales' => esc_html('Menú Redes Sociales', 'nutritzy'),
     ));
 
     // Soporte para imagenes
-    add_theme_support('post-thumbnails'); // Se añadio como estra el soporte para imagenes destacadas en los post y paginas
+    add_theme_support('post-thumbnails'); // Se añadio como extra el soporte para imagenes destacadas en los posttypes y paginas
 }
 
 add_action( 'after_setup_theme', 'nutritzy_setup');
@@ -19,13 +20,13 @@ function nutritzy_styles_js() {
 
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', false, '4.6' );
     wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css', false, '1.7.1' );
-	wp_enqueue_style( 'peaceCSS', get_template_directory_uri() . '/assets/css/pace.min.css', false, '1.0' );
+	wp_enqueue_style( 'paceCSS', get_template_directory_uri() . '/assets/css/pace.min.css', false, '1.0' );
     wp_enqueue_style( 'style', get_stylesheet_uri(), array('bootstrap'));
 
     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', false, '3.5.1', true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.6', true);
     wp_enqueue_script('leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js', false, '1.7.1', true);
-	wp_enqueue_script('peaceJS', get_template_directory_uri() . '/assets/js/pace.min.js', false, '1.0', true);
+	wp_enqueue_script('paceJS', get_template_directory_uri() . '/assets/js/pace.min.js', false, '1.0', true);
     wp_enqueue_script('app', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), '1.0', true);
 
 }
@@ -42,6 +43,18 @@ function nutritzy_nav_class($atts, $items, $args){
 }
 
 add_filter( 'nav_menu_link_attributes', 'nutritzy_nav_class', 10, 3 ); // Explicar el viernes el 10 y 3
+
+// Añadir clase nav-link a la navegacion
+function nutritzy_navFooter_class($atts, $items, $args){
+    if($args->theme_location == 'menu_footer'){
+        $class = 'class';
+        $atts['class'] = 'nav-link';
+    }
+
+    return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'nutritzy_navFooter_class', 10, 3 ); // Explicar el viernes el 10 y 3
 
 // Registramos un Post type para mostrar la galeria de las imagenes
 function nutritzy_posttype_galeria() {
@@ -101,7 +114,7 @@ function nutritzy_posttype_galeria() {
 }
 add_action( 'init', 'nutritzy_posttype_galeria', 0 );
 
-// Registramos un shortcode que sera el que muestre la agaleria de las imagenes.
+// Registramos un shortcode que sera el que muestre la galeria de las imagenes.
 // Shortcode [nutritzy_galeria]
 function nutritzy_galeria_shortcode(){
     $args = array(
@@ -198,7 +211,7 @@ function nutritzy_servicios_shortcode(){
             <?php the_post_thumbnail(); ?>
             <div class="card-body ">
                 <h5 class="card-title "> <?php the_title(); ?> </h5>
-                <p class="card-text "> <?php the_content(); ?></p>
+                <p class="card-text "> <?php the_excerpt(); ?></p>
                 <a href="#" class="btn py-2 px-4">Ver Más</a>
             </div>
         </div>
@@ -214,11 +227,15 @@ add_shortcode( 'nutritzy_servicio', 'nutritzy_servicios_shortcode' );
 function nutritzy_mapa_shortcode(){
     $lat = get_field('latitud');
     $lng = get_field('longitud'); 
-    $direccion = get_field('direccion');?>
+    $direccion = get_field('direccion');
+	$ubicacion = get_field('ubicacion');
+	
+	?>
 
     <input type="hidden" id="lat" value="<?php echo $lat; ?>">
     <input type="hidden" id="lng" value="<?php echo $lng; ?>">
     <input type="hidden" id="direccion" value="<?php echo $direccion; ?>">
+	<input type="hidden" id="ubi" value="<?php echo $ubicacion; ?>">
 
     <div id="mapa"></div>
 

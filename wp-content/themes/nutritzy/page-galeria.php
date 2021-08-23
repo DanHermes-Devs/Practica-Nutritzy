@@ -12,22 +12,7 @@
 
 
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-0 m-0">
-            <?php $args = array(
-                'post_type' => 'galeria_nutritzy',
-            );
-
-            $galeria = new WP_Query($args);
-
-            while($galeria->have_posts()): $galeria->the_post(); ?>
-                <div class="row r m-0">
-                    <div class="col-6 col-md-6 m-0 p-0"><img class="w-100" src="<?php the_field('imagen_1'); ?> "></div>
-                    <div class="col-6 col-md-6 m-0 p-0"><img class="w-100" src="<?php the_field('imagen_2'); ?> "></div>
-                    <div class="col-6 col-md-6 m-0 p-0"><img class="w-100" src="<?php the_field('imagen_3'); ?> "></div>
-                    <div class="col-6 col-md-6 m-0 p-0"><img class="w-100" src="<?php the_field('imagen_4'); ?> "></div>
-                </div>
-            <?php endwhile; wp_reset_postdata(); ?>
-
-            <?php /* do_shortcode('[nutritzy_galeria]'); */ ?>
+            <?php do_shortcode('[nutritzy_galeria]'); ?>
         </div>
     </div>
 </div>
