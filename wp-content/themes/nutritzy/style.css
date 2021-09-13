@@ -13,162 +13,162 @@ Text Domain: nutritzy
 */
 
 
-html{
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
 
- .vh-100{
-   height: 100vh;
- }
- 
- .image-font{
-   background-image: url('assets/img/Header/Background-header.svg');
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-color: black;
-   background-blend-mode: screen;
- }
+.vh-100 {
+  height: 100vh;
+}
 
- .image-font2{
-   background-image: url('assets/img/Header/personas-ejercicio.svg');
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
+.image-font {
+  background-image: url('assets/img/Header/Background-header.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+  background-blend-mode: screen;
+}
 
- }
+.image-font2 {
+  background-image: url('assets/img/Header/personas-ejercicio.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
- .image{
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
-   border: 2px solid #93c021;
-   border-radius: 50%;
- } 
+}
 
- .btn{
+.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 2px solid #93c021;
+  border-radius: 50%;
+}
+
+.btn {
   background-color: #93c021;
   color: #000;
   border-color: #93c021;
 
- }
+}
 
- .z-index-10{
-   z-index: 999;
- }
+.z-index-10 {
+  z-index: 999;
+}
 
- .pt-6{
-   margin-top: 150px;
- }
+.pt-6 {
+  margin-top: 150px;
+}
 
- .bg{
- background: #f39200;
- }
+.bg {
+  background: #f39200;
+}
 
-.gap{
+.gap {
   gap: 1rem;
- }
- 
- .border-left {
-  border-left: 2px solid #93c021!important;
- }
+}
 
- .border-right {
-   border-right: 2px solid #93c021!important;
- }
+.border-left {
+  border-left: 2px solid #93c021 !important;
+}
 
- .card{
-  border: none!important;
- }
+.border-right {
+  border-right: 2px solid #93c021 !important;
+}
 
- .image-Cont{
-   background-image: url('assets/img/Contacto/background-contacto.svg');
-   background-repeat: no-repeat;
-   background-position: center center;
- }
+.card {
+  border: none !important;
+}
 
- .bf{
-  background:#f39200; 
- }
+.image-Cont {
+  background-image: url('assets/img/Contacto/background-contacto.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
- .bf1{
-   background: #FFC346;
- }
+.bf {
+  background: #f39200;
+}
 
- .bf2{
-   background: #BA6400;
- }
+.bf1 {
+  background: #FFC346;
+}
 
- .border{
-   border: 2px solid #000000!important
- }
+.bf2 {
+  background: #BA6400;
+}
 
- .opacidad{
-   background-color: rgba(255,255,255,.8);
- }
+.border {
+  border: 2px solid #000000 !important
+}
 
- .t{
-   margin-top: 1rem;
- }
- 
-@media only screen and (max-width: 1000px){
+.opacidad {
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.t {
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
   .border-left {
-  border-left: 2px solid #ffffff!important;
+    border-left: 2px solid #ffffff !important;
   }
 
   .border-right {
-    
-    border-right: 2px solid #ffffff!important;
+
+    border-right: 2px solid #ffffff !important;
   }
 
-  .car1{
+  .car1 {
     padding-top: 20px;
   }
 
-  .car2{
+  .car2 {
     padding-top: 20px;
   }
 
-  .footz{
+  .footz {
     text-align: center;
   }
 }
 
-  
 
-@media only screen and (max-width: 900px){
-  .vh{
-    height: auto!important;
+
+@media only screen and (max-width: 900px) {
+  .vh {
+    height: auto !important;
   }
 
-  .mr-4{
-    margin-right: 0!important;
+  .mr-4 {
+    margin-right: 0 !important;
   }
 
-  .pl-4{
-    padding-left: 0!important;
+  .pl-4 {
+    padding-left: 0 !important;
   }
 
-  
-  .w-25{
-    width: 50%!important;
+
+  .w-25 {
+    width: 50% !important;
   }
 }
 
-@media only screen and (max-width: 700px){
-  .w-50{
-    width: 100%!important; 
+@media only screen and (max-width: 700px) {
+  .w-50 {
+    width: 100% !important;
   }
 
-  .p{
-    display: flex!important;
-    flex-flow: column!important;
-    text-align: center!important;
+  .p {
+    display: flex !important;
+    flex-flow: column !important;
+    text-align: center !important;
   }
 
-  .w-75{
-    width: 100%!important;
+  .w-75 {
+    width: 100% !important;
   }
 
 }
@@ -179,15 +179,14 @@ html{
 }
 
 /* Formulario de contacto */
-#wpcf7-f32-o1 p label{
+#wpcf7-f32-o1 p label {
   width: 100%;
 }
 
-
 .list-style-none {
-  list-style: none!important;
+  list-style: none !important;
 }
 
 .list-style-none a {
-  color: #000!important;
+  color: #000 !important;
 }
